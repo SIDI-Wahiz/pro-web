@@ -4,105 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProWeb - Création de sites web</title>
+
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7fb;
+            background: #f4f7fb;
             color: #222;
-            text-align: center;
         }
 
         header {
-            background-color: #102a43;
+            background: #071b49;
             color: white;
-            padding: 25px;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-
-        nav {
-            background-color: #243b53;
-            padding: 15px;
+            color: #35d0ff;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 15px;
+            margin-left: 20px;
         }
 
         .hero {
-            padding: 70px 20px;
+            background: linear-gradient(135deg, #071b49, #087cf0);
+            color: white;
+            padding: 90px 8%;
+            text-align: center;
         }
 
         .hero h2 {
-            color: #102a43;
-            font-size: 32px;
+            font-size: 38px;
+            margin-bottom: 20px;
         }
 
         .hero p {
             font-size: 18px;
             line-height: 1.6;
+            margin-bottom: 30px;
         }
 
-        .button {
+        .bouton {
             display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 14px 25px;
-            border-radius: 6px;
+            background: #35d0ff;
+            color: #071b49;
+            padding: 15px 25px;
+            border-radius: 8px;
             text-decoration: none;
-            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 25px;
+            color: #071b49;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .carte {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 280px;
+            box-shadow: 0 4px 15px #00000010;
+        }
+
+        .carte h3 {
+            margin-bottom: 15px;
+            color: #087cf0;
+        }
+
+        .carte p {
+            line-height: 1.6;
+        }
+
+        #contact p {
+            margin: 12px 0;
         }
 
         footer {
-            background-color: #102a43;
+            background: #071b49;
             color: white;
-            padding: 20px;
-            margin-top: 40px;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                gap: 20px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <h1>ProWeb</h1>
-        <p>Votre partenaire pour le web</p>
+
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#apropos">À propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <main>
+        <section class="hero" id="accueil">
+            <h2>Développez votre activité sur Internet</h2>
 
-    <section class="hero" id="accueil">
-        <h2>Bienvenue chez ProWeb !</h2>
-        <p>
-            Nous créons des sites web modernes et professionnels
-            pour aider les entreprises à se développer sur Internet.
-        </p>
-        <a class="button" href="#contact">Découvrir nos services</a>
-    </section>
+            <p>
+                Nous créons des sites Internet modernes et adaptés
+                aux besoins des entrepreneurs et des petites entreprises.
+            </p>
 
-    <section id="services">
-        <h2>Nos services</h2>
-        <p>Création de sites web adaptés à vos besoins.</p>
-        <p>Des solutions simples pour développer votre présence en ligne.</p>
-    </section>
+            <a href="#services" class="bouton">Découvrir nos services</a>
+        </section>
 
-    <section id="contact">
-        <h2>Contactez-nous</h2>
-        <p>Vous avez un projet ? Parlons-en !</p>
-        <p>ProWeb — Créons votre présence sur Internet.</p>
-    </section>
+        <section id="services">
+            <h2>Nos services</h2>
+
+            <div class="services">
+                <article class="carte">
+                    <h3>Création de sites web</h3>
+                    <p>
+                        Des sites modernes pour présenter votre entreprise
+                        et vos activités.
+                    </p>
+                </article>
+
+                <article class="carte">
+                    <h3>Sites adaptés aux téléphones</h3>
+                    <p>
+                        Des pages faciles à consulter sur ordinateur
+                        et sur téléphone portable.
+                    </p>
+                </article>
+
+                <article class="carte">
+                    <h3>Présence en ligne</h3>
+                    <p>
+                        Une meilleure présentation de vos produits
+                        et de vos services sur Internet.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="apropos">
+            <h2>À propos de ProWeb</h2>
+
+            <p>
+                ProWeb est un projet de création de sites web
+                destiné aux entrepreneurs et aux petites entreprises.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+
+            <p>Vous souhaitez présenter votre activité sur Internet ?</p>
+
+            <p>Contactez-nous pour discuter de votre projet.</p>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 ProWeb - Tous droits réservés.</p>
+        <p>&copy; 2026 ProWeb. Tous droits réservés.</p>
     </footer>
 
 </body>
